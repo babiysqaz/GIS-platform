@@ -1,0 +1,21 @@
+# Editor
+.vscode/
+.idea/
+
+# Claude memory
+.claude/
+
+# Node
+package-lock.json
+node_modules/
+
+# Git worktrees
+*.worktrees/
+
+# Subproject directories (managed as separate repos)
+gis-backend/
+gis-frontend/
+
+# OS
+.DS_Store
+Thumbs.db
