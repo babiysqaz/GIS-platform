@@ -1,5 +1,6 @@
 services:
   db:
+    image: babiysqaz/gis-db:latest
     build: ./mysql
     command: --host_cache_size=0
     environment:
@@ -27,6 +28,7 @@ services:
       retries: 10
 
   backend:
+    image: babiysqaz/gis-backend:latest
     build: ./gis-backend
     environment:
       DATABASE_URL: mysql+asyncmy://root:${MYSQL_ROOT_PASSWORD:-rootpass}@db:3306/gis_platform
@@ -39,6 +41,7 @@ services:
         condition: service_healthy
 
   frontend:
+    image: babiysqaz/gis-frontend:latest
     build:
       context: ./gis-frontend
       args:
